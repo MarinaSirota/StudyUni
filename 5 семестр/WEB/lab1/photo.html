@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>Марина Сирота.Фото</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"> </script>
+    <script src="gallery.js"></script>
 </head>
-<body style="background-image: url(4.jpg);background-attachment: fixed;">
+<body style="background-image: url(images/4.jpg);background-attachment: fixed;">
 <div class="header">
     <table>
         <tr>
@@ -13,7 +15,27 @@
             </td>
             <td class="menuTable"> <a href="aboutMe.html">ОБО МНЕ</a>
             </td>
-            <td class="menuTable"> <a href="interest.html">ИНТЕРЕСЫ</a>
+            <td class="menuTable">
+                <div>
+                    <ul class="menu-item">
+                        <a href="interest.html" >ИНТЕРЕСЫ</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#p1">Мои хобби</a>
+                            </li>
+                            <li>
+                                <a href="#p2">Моя семья</a>
+                            </li>
+                            <li>
+                                <a href="#p3">Моя музыка</a>
+                            </li>
+                            <li>
+                                <a href="#p4">Мои фильмы</a>
+                            </li>
+                        </ul>
+                    </ul>
+
+                </div>
             </td>
             <td class="menuTable"> <a href="study.html">УЧЕБА</a>
             </td>
@@ -23,51 +45,36 @@
             </td>
             <td class="menuTable"> <a href="test.html">ТЕСТ</a>
             </td>
-
-
+            <td class="menuTable"> <a href="history.html">ИСТОРИЯ</a>
+            </td>
         </tr>
     </table>
 
 </div>
 
-<div class="contentForGallery">
-    <table>
-        <tr>
-            <td><img src="belausSize.jpg" height="400" width="300" title="Море"/>
-            </td>
-            <td><img src="hachapiriSize.jpg" height="400" width="300" title="Грузинский ресторан"/>
-            </td>
-            <td><img src="sevasSize.JPG"  height="400" width="300" title="Севастополь"/>
-            </td>
-            <td><img src="sport2Size.jpg" height="400" width="300" title="Спортзал"/></td>
-        </tr>
-        <tr>
+    <div class="gallery-box">
+        <div class="view">
+            <div class="big-image"><img src="images/belaus.jpg" alt="image11" title="Море"></div>
+            <a href="#" class="prev"></a>
+            <a href="#" class="next"></a>
+        </div>
 
-            <td><img src="geo2.jpg" height="225" width="300" title="Грузия"/>
-            </td>
-            <td><img src="geoSize.jpg" height="223" width="300" title="Грузия"/>
-            </td>
-            <td><img src="vinogradnikiSize.jpg" height="225" width="300" title="Грузинские виноградники"/>
-            </td>
-            <td><img src="mezhvodnoeSize.jpg" height="225" width="300" title="Море"/></td>
-        </tr>
-        <tr>
-            <td><img src="mamaSize.jpg" height="400" width="302" title="Мама"/>
-            </td>
-            <td><img src="papaSize.jpg" height="400" width="294" title="Папа"/>
-            </td>
+        <div class="thumbnails">
+            <a href="images/belausSize.jpg" class="active"><img src="images/belaus.jpg" alt="image11" title="Море"></a>
+            <a href="images/mamaSize.jpg"><img src="images/mama.jpg" alt="image12" title="Мама"></a>
+            <a href="images/papaSize.jpg"><img src="images/papa.jpg" alt="image13" title="Папа"></a>
+            <a href="images/sevasSize.jpg"><img src="images/sevas.jpg" alt="image14" title="Севас"></a>
+            <a href="images/IMG_3759.jpg"><img src="images/IMG_3759.jpg" alt="image14" title="Маленькая"></a>
+        </div>
+    </div>
 
-            <td><img src="romaSize.jpg" height="399" width="300" title="Парень"/>
-            </td>
-            <td><img src="papahaSize.jpg" height="400" width="300" title="Грузинский ресторан"/></td>
-        </tr>
-    </table>
-</div>
+
+
 <div class="footer">
     <table>
         <tr>
             <td>
-                <img src="telSize.jpg" alt="photo_phone" height="20" width="20"/></td>
+                <img src="images/telSize.jpg" alt="photo_phone" height="20" width="20"/></td>
             <td>
                 <a href="tel:+79787369208">+7 (978) 736-92-08</a>
             </td>
@@ -75,8 +82,7 @@
 
         <tr>
             <td>
-
-                <img src="mailSize.jpg" alt="photo_mail" height="20" width="20"/>
+                <img src="images/mailSize.jpg" alt="photo_mail" height="20" width="20"/>
             <td>
                 <a href="mailto: sm_felicita@mail.ru">sm_felicita@mail.ru</a>
             </td>
@@ -85,7 +91,7 @@
         <tr>
             <td>
 
-                <img src="inst2.jpg" alt="photo_inst" height="20" width="20"/>
+                <img src="images/inst2.jpg" alt="photo_inst" height="20" width="20"/>
             <td>
                 <a href="https://www.instagram.com/s_marussya/">@s_marussya</a>
             </td>
@@ -93,7 +99,7 @@
         <tr>
             <td>
 
-                <img src="vk2Size.jpg" alt="photo_vk" height="20" width="20"/>
+                <img src="images/vk2Size.jpg" alt="photo_vk" height="20" width="20"/>
             <td>
                 <a href="https://vk.com/id76253784">Марина Сирота </a>
             </td>
@@ -102,4 +108,17 @@
     </table>
 </div>
 </body>
+
+<script src="interest.js"></script>
+<script type="text/javascript">
+    if (localStorage.photoCount)
+    {
+        localStorage.photoCount=Number(localStorage.photoCount) +1
+    }
+    else
+    {
+        localStorage.photoCount=1
+    }
+
+</script>
 </html>

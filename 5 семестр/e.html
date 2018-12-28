@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Марина Сирота.Фото</title>
+    <link rel="stylesheet" href="stylesForTester.css">
+    <script src="jquery-3.3.1develop.js">
+        $(document).ready(function(){
+
+            $("#thumbnail li a").click(function(){
+
+                $("#large img").hide().attr({"src": $(this).attr("href"), "title": $("> img", this).attr("title")});
+
+                $("#large h2").html($("> img", this).attr("title"));
+
+                return false;
+
+            });
+
+            $("#large>img").load(function(){$("#large>img:hidden").fadeIn("slow")});
+
+        });
+    </script>
+</head>
+<body style="background-image: url(images/4.jpg);background-attachment: fixed;">
+
+<div id="large">
+
+    <img src="images/belaus.jpg" title="" alt="image01.jpg" />
+
+</div>
+
+<ul id="thumbnail">
+
+    <li><a href="images/belaus.jpg"><img src="images/belausSize.jpg" title="" alt="image01.jpg" /></a></li>
+    <li><a href="images/belaus.jpg"><img src="images/belausSize.jpg" title="" alt="image01.jpg" /></a></li>
+    <li><a href="images/mama.jpg"><img src="images/mama.jpg" title="" alt="image01.jpg" /></a></li>
+    <li><a href="images/belaus.jpg"><img src="images/belausSize.jpg" title="" alt="image01.jpg" /></a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,7 @@
+C:\Users\sm_fe\source\repos\тпо_сшарп\тпо_сшарп\obj\Debug\TPO2.csprojAssemblyReference.cache
+C:\Users\sm_fe\source\repos\тпо_сшарп\тпо_сшарп\obj\Debug\TPO2.csproj.CoreCompileInputs.cache
+C:\Users\sm_fe\source\repos\тпо_сшарп\тпо_сшарп\bin\Debug\тпо_сшарп.exe.config
+C:\Users\sm_fe\source\repos\тпо_сшарп\тпо_сшарп\bin\Debug\тпо_сшарп.exe
+C:\Users\sm_fe\source\repos\тпо_сшарп\тпо_сшарп\bin\Debug\тпо_сшарп.pdb
+C:\Users\sm_fe\source\repos\тпо_сшарп\тпо_сшарп\obj\Debug\тпо_сшарп.exe
+C:\Users\sm_fe\source\repos\тпо_сшарп\тпо_сшарп\obj\Debug\тпо_сшарп.pdb

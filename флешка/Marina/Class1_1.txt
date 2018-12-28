@@ -1,0 +1,82 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace tpo2
+{
+    public class numberClass
+    {
+        public int number;
+        public string GetStatusNumber() {
+            if (number <0)
+            {
+                return "Minus";
+            }
+            else if (number == 0)
+            {
+                return "Zero";
+            }
+            else return "Plus";
+            
+ 
+        }
+
+
+    }
+    public class Log
+    {
+      
+        static private StreamWriter log = new StreamWriter("log.log");
+        static public void Add(string msg) 
+        {
+            log.WriteLine(msg);
+    }
+    static public void Close() 
+         {
+        log.Close();
+        }
+}
+
+abstract class Tester
+{
+    protected void LogMessage(string s)
+    //Добавление сообщения в лог-файл
+    {
+        Log.Add(s);
+    }
+}
+    class numberClassTester : Tester // Тестовый драйвер
+{
+    numberClass OUT;
+    public numberClassTester()
+    {
+        OUT = new numberClass();
+        Run();
+    }
+    private void Run()
+    {
+        numberClassTest1();
+    }
+    private void numberClassTest1()
+    {
+        int[] num = { 0, 1, -2, 15, -5, 20 };
+	string[] = outPut{"Zero","Plus,"Minus","Plus","Minus","Plus"}
+        for (int i = 0; i <= 5; i++)
+        {
+            OUT.number = num[i];
+           if (OUT.GetStatusNumber()==outPut[i])
+            	LogMessage(i + "GOOD ");
+	else 
+            LogMessage(i + " BAD");
+        }
+    }
+    static void Main()
+    {
+        numberClassTester CommandTester = new numberClassTester();
+        Log.Close();
+    }
+}
+}

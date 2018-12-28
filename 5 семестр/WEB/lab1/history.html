@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Сирота Марина Романовна</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style=" background-image: url(images/4.jpg); background-attachment: fixed;">
+
+<div class="header">
+    <table>
+        <tr>
+            <td class="menuTable"><a href="startPage.html">ГЛАВНАЯ</a>
+            </td>
+            <td class="menuTable"> <a href="aboutMe.html">ОБО МНЕ</a>
+            </td>
+            <td class="menuTable">
+            <div>
+                <ul class="menu-item">
+                    <a href="interest.html" >ИНТЕРЕСЫ</a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="#p1">Мои хобби</a>
+                        </li>
+                        <li>
+                            <a href="#p2">Моя семья</a>
+                        </li>
+                        <li>
+                            <a href="#p3">Моя музыка</a>
+                        </li>
+                        <li>
+                            <a href="#p4">Мои фильмы</a>
+                        </li>
+                    </ul>
+                </ul>
+
+            </div>
+        </td>
+            <td class="menuTable"> <a href="study.html">УЧЕБА</a>
+            </td>
+            <td class="menuTable"> <a href="photo.html">ФОТО</a>
+            </td>
+            <td class="menuTable"> <a href="contact.html">КОНКАКТЫ</a>
+            </td>
+            <td class="menuTable"> <a href="test.html">ТЕСТ</a>
+            </td>
+            <td class="menuTable"> <a href="history.html">ИСТОРИЯ</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="content">
+
+    <table style="text-align:justify; width: auto; height: auto; border-collapse: collapse;
+font-size: 20px"
+           border="1">
+
+        <tr>
+            <td>Главная</td>
+            <td><script> if(localStorage.startCount) document.write(localStorage.startCount+ " раз")
+            else document.write("0 раз") ;</script></td>
+
+        </tr>
+        <tr>
+            <td>Обо мне</td>
+            <td><script> if(localStorage.meCount) document.write(localStorage.meCount+ " раз")
+            else document.write("0 раз") ;</script></td>
+
+        </tr>
+        <tr>
+            <td>Интересы</td>
+            <td><script> if(localStorage.interestCount) document.write(localStorage.interestCount+ " раз")
+            else document.write("0 раз") ;</script></td>
+
+        </tr>
+        <tr>
+            <td>Учеба</td>
+            <td><script> if(localStorage.studyCount) document.write(localStorage.studyCount+ " раз")
+            else document.write("0 раз") ; </script></td>
+
+        </tr>
+        <tr>
+            <td>Тест</td>
+            <td><script> if(localStorage.testCount) document.write(localStorage.testCount+ " раз")
+            else document.write("0 раз") ;</script></td>
+
+        </tr>
+        <tr>
+            <td>Контакты</td>
+            <td><script> if(localStorage.contactCount) document.write(localStorage.contactCount+ " раз")
+            else document.write("0 раз") ;</script></td>
+
+        </tr>
+        <tr>
+        <td>Фото</td>
+            <td><script> if(localStorage.photoCount) document.write(localStorage.photoCount+ " раз")
+            else document.write("0 раз") ;</script></td>
+
+    </tr>
+        <tr>
+            <td>История</td>
+            <td><script> if(localStorage.historyCount) document.write(localStorage.historyCount+ " раз")
+            else document.write("0 раз") ;
+            </script></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+<div class="footer">
+    <table>
+        <tr>
+            <td>
+                <img src="images/telSize.jpg" alt="photo_phone" height="20" width="20"/></td>
+            <td>
+                <a href="tel:+79787369208">+7 (978) 736-92-08</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+
+                <img src="images/mailSize.jpg" alt="photo_mail" height="20" width="20"/>
+            <td>
+                <a href="mailto: sm_felicita@mail.ru">sm_felicita@mail.ru</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+
+                <img src="images/inst2.jpg" alt="photo_inst" height="20" width="20"/>
+            <td>
+                <a href="https://www.instagram.com/s_marussya/">@s_marussya</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="images/vk2Size.jpg" alt="photo_vk" height="20" width="20"/>
+            <td>
+                <a href="https://vk.com/id76253784">Марина Сирота </a>
+            </td>
+        </tr>
+        <tr>
+            <td ></td>
+            <td id="doc_time" style="color: #2b0726">
+            </td>
+        </tr>
+
+    </table>
+
+</div>
+<script src="date.js">
+</script>
+<script src="interest.js"></script>
+<script>
+if (localStorage.historyCount)
+{
+localStorage.historyCount=Number(localStorage.historyCount) +1
+}
+else
+{
+localStorage.historyCount=1
+}
+</script>
+<script src="history.js"></script>
+</body>
+</html>tml>

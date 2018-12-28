@@ -1,0 +1,8 @@
+
+Simens;2;3;2;
+Nokia;2;3;8;
+Samsung;2;3;4;
+Alcatel;2;3;16;
+Nokia 7310;2;3;32;
+iPhone 8;2;3;1;
+iPhone 9;2;3;2;

@@ -1,0 +1,111 @@
+
+
+				String sn = textFieldSecondName.getText();
+				String n = textFieldName.getText();
+				String fn = textFieldFatherName.getText();
+				String p = textFieldPhone.getText();
+				int flagSn = 1;
+				int flagN = 1;
+				int flagFn = 1;
+				int flagP = 1;
+
+				if (!isWorld(sn)) {
+					flagSn = 0;
+					JOptionPane.showMessageDialog(null, "Введите Фамилию!");
+				}
+				if (!isWorld(n)) {
+					flagN = 0;
+					JOptionPane.showMessageDialog(null, "Введите Имя!");
+				}
+				if (!isWorld(fn)) {
+					flagFn = 0;
+					JOptionPane.showMessageDialog(null, "Введите Отчество!");
+				}
+				if (!isNumeric(p) && sn.length() != 11) {
+					flagP = 0;
+					JOptionPane.showMessageDialog(null, "Введите Телефон!");
+				}
+				String query=null;
+				if (flagSn == 1 && flagN == 1 && flagFn == 1 && flagN == 1 && flagP == 1) {
+					//Если все или 3
+					if(sn!=null && n!=null && fn!=null && p!=null) {
+						query="SELECT *  FROM `customer` WHERE `Second_Name` = '"+sn+"' AND `Name` = '"+n+"' "
+								+ "AND `Father_Name`= '"+fn+"' AND `Phone`='"+p+"'";
+					}
+					if(sn!=null && n!=null && fn!=null && p==null) {
+						query="SELECT *  FROM `customer` WHERE `Second_Name` = '"+sn+"' AND `Name` = '"+n+"' "
+								+ "AND `Father_Name`= '"+fn+"'";
+					}
+					if(sn!=null && n!=null && fn==null && p!=null) {
+						query="SELECT *  FROM `customer` WHERE `Second_Name` = '"+sn+"' AND `Name` = '"+n+"' "
+								+ "AND `Phone`='"+p+"'";
+					}
+					if(sn!=null && n==null && fn!=null && p!=null) {
+						query="SELECT *  FROM `customer` WHERE `Second_Name` = '"+sn+"'"
+								+ "AND `Father_Name`= '"+fn+"' AND `Phone`='"+p+"'";
+					}
+					
+					
+					//если только фамилия и еще что-то 
+					if(sn!=null && n!=null && fn==null && p==null) {
+						query="SELECT *  FROM `customer` WHERE `Second_Name` = '"+sn+"' AND `Name` = '"+n+"' ";
+					}
+					if(sn!=null && n==null && fn!=null && p==null) {
+						query="SELECT *  FROM `customer` WHERE `Second_Name` = '"+sn+"'"
+								+ "AND `Father_Name`= '"+fn+"'" ;
+					}
+					if(sn!=null && n==null && fn==null && p!=null) {
+						query="SELECT *  FROM `customer` WHERE `Second_Name` = '"+sn+"'"
+								+ "AND `Phone`='"+p+"'";
+					}
+					
+					//если имя и еще что-то
+					if(sn==null && n!=null && fn!=null && p==null) {
+						query="SELECT *  FROM `customer` WHERE `Name` = '"+n+"' "
+								+ "AND `Father_Name`= '"+fn+"'";
+					}
+					if(sn==null && n!=null && fn==null && p!=null) {
+						query="SELECT *  FROM `customer` WHERE `Name` = '"+n+"' "
+								+ "AND `Phone`='"+p+"'";
+					}
+					
+					
+					if(sn==null && n==null && fn!=null && p!=null) {
+						query="SELECT *  FROM `customer` WHERE "
+								+ "`Father_Name`= '"+fn+"' AND `Phone`='"+p+"'";
+					}
+					
+					
+					if(sn!=null && n==null && fn==null && p==null) {
+						query="SELECT *  FROM `customer` WHERE `Second_Name` = '"+sn+"'";
+					}
+					if(sn==null && n!=null && fn==null && p==null) {
+						query="SELECT *  FROM `customer` WHERE `Name` = '"+n+"' ";
+					}
+					if(sn==null && n==null && fn!=null && p==null) {
+						query="SELECT *  FROM `customer` WHERE `Father_Name`= '"+fn+"'";
+					}
+					if(sn==null && n==null && fn==null && p!=null) {
+						query="SELECT *  FROM `customer` WHERE `Phone`='"+p+"'";
+					}
+					
+					try (Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/salon?serverTimezone=Europe/Moscow&useSSL=false", "root","")) 
+					{
+						PreparedStatement  statement = connection.prepareStatement(query);
+						ResultSet res = statement.executeQuery();
+						while(res.next()) {
+							int rowCount = table.getRowCount();
+							for (int i = rowCount - 1; i >= 0; i--) {
+								CustomerT_obj.deleteRow(i);
+							} 
+							CustomerT_obj.addRow(new customer(res.getInt(1), res.getString(2),
+									res.getString(3),res.getString(4),res.getString(5),res.getInt(6)));
+							
+						}
+					} catch (Exception ex) {
+						
+						JOptionPane.showMessageDialog(null, "Connection failed..."+ex);
+						System.out.println(ex);
+					}
+					
+				}

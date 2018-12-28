@@ -1,0 +1,88 @@
+.header{
+    width: auto;
+    height: 100px;
+}
+.menu{
+    width: 200px;
+    height: auto;
+    border: 1px solid black;
+    float: left;
+}
+.content{
+    height: auto;
+    background: mistyrose;
+    margin-left:10%;
+    margin-right: 10%;
+
+}
+.footer{
+    width: auto;
+    height: 120px;
+    border: 1px solid black;
+    margin-bottom: 0%;
+    background: mistyrose;
+}
+.menuTable{
+    width: 14%;
+    height: 95px;
+    text-align: center;
+    font-size: 30px;
+    font-variant: small-caps;
+    font-weight: bold;
+    border-collapse: collapse;
+}
+
+a {
+    color: #2b0726;
+    text-decoration: none;
+}
+a:hover {
+    color: #91648b;
+}
+a:active {
+    color: #2b0726;
+}
+.contentPageAboutMe{
+
+     width: content-box;
+     height: auto;
+    margin-left:10%;
+    margin-right: 10%;
+    background: mistyrose;
+ }
+
+.studyTable {
+    font-size: 20px;
+    border-collapse: collapse;
+}
+
+.contentForGallery{
+    width: content-box;
+    height: auto;
+    margin-top:2%;
+    margin-left:5%;
+    margin-right:4%;
+}
+.contentForInterest{
+    height: auto;
+    margin-left:10%;
+    margin-right: 10%;
+    background: mistyrose;
+}
+.interestPR{
+    font-size: 20px;
+    font-style: oblique;
+    align-content: center;
+
+}
+.contentForContact{
+    width: content-box;
+    height: auto;
+    margin-left:25%;
+    margin-right: 25%;
+
+}
+.formDesign{
+    background-color:#ffe4e1;
+    border-color: #ffb6c1;
+}
